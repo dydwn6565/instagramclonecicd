@@ -1,0 +1,19 @@
+.profile-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    color: grey;
+}
+
+.first {
+    margin-top: 50px;
+}
+
+.account {
+    margin-top: 50px;
+}
+
+.account-private {
+    margin-top: 50px;
+}

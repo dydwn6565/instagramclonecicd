@@ -1,0 +1,33 @@
+.header-profile-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.header-profile-ul {
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0.0.26);
+    border-radius: 10px;
+    margin-left: -110px;
+    width: 200px;
+    position: fixed;
+    padding: 5px;
+    z-index: 10;
+}
+
+.header-profile-ul>div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.header-profile-ul>div>span {
+    padding: 10px;
+}
+
+.exchange-icon {
+    rotate: 90deg;
+}

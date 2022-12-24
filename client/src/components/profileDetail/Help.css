@@ -1,0 +1,42 @@
+.help {
+    display: flex;
+    width: 1000px;
+    height: 800px;
+    border: 0.5px solid lightgrey;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.help-main {
+    width: 800px;
+    margin-left: -120px;
+    padding: 2%;
+}
+
+.help-main-title {
+    font-size: 20px;
+    margin: 20px 0 20px 0;
+}
+
+.help-main-content {
+    margin: 10px 0 10px 0;
+}
+
+.help-main-icon {
+    float: right;
+}
+
+@media screen and (max-width: 1000px) {
+    .help {
+        width: 98%;
+        margin-top: 100px;
+        min-width: 550px;
+        margin-left: 10px;
+        justify-content: center;
+    }
+    .help-main {
+        margin-left: 10px;
+    }
+}

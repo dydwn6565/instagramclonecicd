@@ -1,0 +1,8 @@
+.side-footer-first-line>span,
+.side-footer-second-line>span {
+    margin-right: 1rem;
+}
+
+.side-footer-second-line{
+    margin-bottom: 2rem;
+}

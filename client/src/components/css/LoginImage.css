@@ -1,0 +1,21 @@
+    .login-cellphone-container{
+            width: 400px;
+            height: 700px;
+            margin-bottom:140px;    
+            position: relative;
+            
+    } 
+    .login-cellphone-slider-pitcure-background {
+        position: absolute;
+        width: 350px;
+        margin: 0 auto;
+        
+    }
+    
+    .login-cellphone-slider-pitcure {
+        position: absolute;
+        width: 303px;
+        margin-top: 22px;
+        margin-left:25px;
+        
+    }

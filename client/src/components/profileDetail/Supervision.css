@@ -1,0 +1,45 @@
+.supervision {
+    display: flex;
+    width: 1000px;
+    height: 800px;
+    border: 0.5px solid lightgrey;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.supervision-main {
+    width: 800px;
+    margin-top: 20px;
+    padding: 2%;
+    margin-left: -80px;
+}
+
+.supervision-main-title {
+    margin: 10px 0px 20px 0;
+    font-size: 20px;
+}
+
+.supervision-main-content {
+    margin: 10px 0px 10px 0px;
+}
+
+.supervision-main-icon {
+    float: right;
+}
+
+@media screen and (max-width: 1000px) {
+    .supervision {
+        top: unset;
+        left: unset;
+        transform: unset;
+        width: 98%;
+        margin-top: 100px;
+        min-width: 550px;
+        margin-left: 10px;
+        justify-content: center;
+    }
+    .supervision-main {
+        margin-left: 10px;
+    }
+}

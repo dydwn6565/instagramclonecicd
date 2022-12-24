@@ -1,0 +1,118 @@
+.extended-main-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.extended-main-modal-main {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0.0.26);
+    border-radius: 10px;
+    position: fixed;
+    top: 200px;
+    height: 700px;
+    z-index: 100;
+    overflow: hidden;
+    display: flex;
+    background-color: black;
+}
+
+.extended-main-image {
+    margin: auto;
+}
+
+.extended-main-modal-info {
+    background-color: white;
+}
+
+.extended-main-modal-main>div>img {
+    width: 100%;
+}
+
+.extended-main-modal-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 250px;
+    padding: 13px;
+}
+
+.extended-main-modal-title-inside {
+    display: flex;
+    align-items: center;
+}
+
+.hr {
+    border-bottom: 0.5px solid lightgrey;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+.extended-main-modal-container {
+    height: 450px;
+    overflow: auto;
+}
+
+.extended-main-modal-info-content-container {
+    display: flex;
+    margin-top: 2%;
+}
+
+.extended-main-modal-info-content {
+    display: flex;
+    align-items: center;
+    min-width: 400px;
+    width: 30vw;
+}
+
+.extended-main-modal-info-content-comment-inside {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.extended-main-modal-info-content-comment-inside-id {
+    margin-right: 10px;
+    margin-left: 0.5vw;
+}
+
+.extended-main-modal-info-content>span,
+.extended-main-modal-info-content>div {
+    margin-left: 2%;
+}
+
+.extended-main-modal-info-content-content,
+.extended-main-modal-title-name {
+    margin-left: 10px;
+}
+
+.extended-main-modal-book-icon {
+    float: right;
+    margin-right: 2%;
+}
+
+.extended-main-modal-info-content-comment {
+    margin-left: 2%;
+}
+
+.date {
+    font-size: 12px;
+}
+
+.extended-main-modal-info-comment {
+    display: flex;
+    margin-left: 2%;
+}
+
+.extended-main-modal-info-comment>div {
+    margin-left: 2%;
+}
+
+.extended-main-modal-info-bottom {
+    bottom: 0;
+    /* width: 560px; */
+}

@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  postgresql:
+    image: 'postgres'
+    volumes: 
+      - data:/data/db
+    environment:
+      - POSTGRES_PASSWORD=dydwn6565
+  backend:
+    build: ./server
+    # build:
+    #   context: ./server
+    #   dockerfile: Dockerfile
+    #   args:
+    ports:
+      - '8080:8080'
+
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    depends_on: 
+      - postgresql
+  frontend:
+    build: ./client
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./client/src:/app/src
+    stdin_open: true
+    tty: true
+    depends_on: 
+      - backend
+
+volumes:
+  data:

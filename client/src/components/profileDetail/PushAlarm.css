@@ -1,0 +1,42 @@
+.push-alarm {
+    display: flex;
+    width: 1000px;
+    height: 800px;
+    border: 0.5px solid lightgrey;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.push-alarm-main {
+    width: 800px;
+    margin-left: -80px;
+}
+
+.push-alarm-main>div {
+    margin: 30px 0 30px 0px;
+    cursor: pointer;
+}
+
+.push-alarm-icon {
+    float: right;
+}
+
+.push-alarm-like {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 1000px) {
+    .push-alarm {
+        width: 98%;
+        margin-top: 100px;
+        min-width: 550px;
+        margin-left: 10px;
+        justify-content: center;
+    }
+    .push-alarm-main {
+        margin-left: 10px;
+    }
+}
