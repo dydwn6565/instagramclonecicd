@@ -62,7 +62,7 @@ class PostRepo {
 
   static async delete(id) {
     try {
-      const { row } = await pool.query("DELETE FROM posts WEHERE id=$1", [id]);
+      const { row } = await pool.query("DELETE FROM posts Where userid=$1", [id]);
 
       return row;
     } catch (error) {

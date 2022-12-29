@@ -44,8 +44,9 @@ class UserRepo {
     status
   ) {
     try {
+      await pool.query("SELECT setval(pg_get_serial_sequence('users', 'id'), COALESCE((SELECT MAX(id) + 1 FROM users), 1), false);");
       const { rows } = await pool.query(
-        "UPDATE users SET userId= $1, name = $2, usrname=$3, password = $4, bio =$5, avatar=$6,status=$7 Where id=$8",
+        "UPDATE users SET userId= $1, name = $2, username=$3, password = $4, bio =$5, avatar=$6,status=$7 Where id=$8",
         [userId, name, username, password, bio, avatar, status, id]
       );
       return toCamelCase(rows)[0];
@@ -58,7 +59,7 @@ class UserRepo {
     try {
       const { rows } = await pool.query(
         `
-      DELETE FROM users WHERE id=$1`,
+      DELETE FROM users WHERE userid=$1`,
         [id]
       );
 

@@ -6,6 +6,7 @@ const loginRepo = require("../repos/login-repo");
 router.get("/get/user/activity", async(req, res) => {
     const loginActivity = await loginRepo.find();
     res.status(201).json({ loginActivity });
+    
 });
 
 router.post("/insert/login/activity", async(req, res) => {
