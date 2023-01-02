@@ -29,7 +29,7 @@ router.post("/post",imageUploader, async (req, res) => {
 });
 
 router.get("/retrive/posts", async (req, res) => {
-  console.log("hit");
+  
   const postsData = await PostRepo.find();
   
   

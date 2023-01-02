@@ -7,7 +7,7 @@ class PostRepo {
       const { rows } = await pool.query(
         "SELECT * FROM posts p INNER JOIN files f ON p.id = f.postid"
       );
-      console.log(rows[0]);
+
       return rows;
     } catch (error) {
       console.log(error);
@@ -29,6 +29,7 @@ class PostRepo {
 
   static async insert(files, content, lat, long, userid) {
     try {
+      
       const { rows } = await pool.query(
         "INSERT INTO posts(content,lat,long,userid) VALUES($1,$2,$3,$4) RETURNING id",
         [content, lat, long, userid]
@@ -48,13 +49,30 @@ class PostRepo {
     }
   }
 
-  static async update(url, content, lat, long, userId, id) {
+  static async update(
+    filename,
+    filepath,
+    postid,
+    content,
+    lat,
+    long,
+    userId,
+    id
+  ) {
     try {
-      const { row } = await pool.query(
-        "UPDATE posts SET url=$1,content=$2,lat=$3,long=$4,userId=$5 WHERE id=$6",
-        [url, content, lat, long, userId, id]
+      const getupdatedpost = await PostRepo.find();
+      
+      await pool.query(
+        "UPDATE posts SET content=$1,lat=$2,long=$3,userid=$4 WHERE id=$5",
+        [content, lat, long, userId, postid]
       );
-      return row;
+
+      await pool.query(
+        "UPDATE files SET filename=$1,filepath=$2 WHERE postid=$3",
+        [filename, filepath, postid]
+      );
+
+      return 1;
     } catch (error) {
       console.log(error);
     }
@@ -62,7 +80,9 @@ class PostRepo {
 
   static async delete(id) {
     try {
-      const { row } = await pool.query("DELETE FROM posts Where userid=$1", [id]);
+      const { row } = await pool.query("DELETE FROM posts Where userid=$1", [
+        id,
+      ]);
 
       return row;
     } catch (error) {

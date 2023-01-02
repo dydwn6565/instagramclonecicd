@@ -3,13 +3,14 @@ const fs = require("fs");
 const { userInfo } = require("os");
 const users = [];
 const messages = [];
-const addUser = async ({ id, clickedUserList, randomRoomNumber }) => {
+const addUser = async ( id, clickedUserList, randomRoomNumber ) => {
   try {
     clickedUserList.map(async (name) => {
+      
       pool
         .query("SELECT * FROM users WHERE name = $1;", [name])
         .then((result) => {
-          console.log(result.rows[0].id);
+          // console.log(result.rows[0].id);
           pool
             .query(
               "SELECT * FROM chatrooms WHERE roomnumber =$1 AND userid =$2",
@@ -69,18 +70,18 @@ const removeUser = (id) => {
   }
 };
 
-const getUser = async (room, userid) => {
-  try {
-    const { rows } = await pool.query(
-      "SELECT name,username,userid FROM users WHERE id= $1;",
-      [userid]
-    );
+// const getUser = async (room, userid) => {
+//   try {
+//     const { rows } = await pool.query(
+//       "SELECT name,username,userid FROM users WHERE id= $1;",
+//       [userid]
+//     );
 
-    return { rows };
-  } catch (error) {
-    console.log(eror);
-  }
-};
+//     return { rows };
+//   } catch (error) {
+//     console.log(eror);
+//   }
+// };
 
 const getUsersInRoom = async (userid) => {
   try {
@@ -119,7 +120,7 @@ const getUsersInRoom = async (userid) => {
           );
         })
       );
-      console.log(new Set(userInRoom))
+      // console.log(new Set(userInRoom))
       return userInRoom;
     }
   } catch (error) {
@@ -137,6 +138,7 @@ const saveText = async (room, userid, message) => {
       "INSERT INTO chatmessages(text,userid,roomnumber) VALUES($1,$2,$3) RETURNING id;",
       [message, userid, room]
     );
+    return 1;
   } catch (error) {
     console.log(error);
   }
@@ -144,10 +146,13 @@ const saveText = async (room, userid, message) => {
 
 const saveImage = async (chatroomsid, userid, imagepath) => {
   try {
+    
     const { rows } = await pool.query(
-      "INSERT INTO chatmessages(imagepath,userid,chatroomsid) VALUES($1,$2,$3) RETURNING id;",
+      "INSERT INTO chatmessages(imagepath,userid,roomnumber) VALUES($1,$2,$3) RETURNING id;",
       [imagepath, userid, chatroomsid]
     );
+    
+    return 1;
   } catch (error) {
     console.log(error);
   }
@@ -178,7 +183,7 @@ const findMessages = async (randomRoomNumber) => {
 module.exports = {
   addUser,
   removeUser,
-  getUser,
+  // getUser,
   getUsersInRoom,
   getUserRoomByName,
   saveText,

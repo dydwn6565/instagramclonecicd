@@ -12,18 +12,19 @@ class PostLikeRepo {
     }
   }
 
-  static async insert({ userid, postid }) {
+  static async insert( userid, postid ) {
     try {
       const { rows } = await pool.query(
         "INSERT INTO postslike(userid,postid) VALUES($1,$2) ",
         [userid, postid]
       );
+      return 1;
     } catch (error) {
       console.log(error);
     }
   }
 
-  static async delete({ userid, postid }) {
+  static async delete( userid, postid ) {
     try {
       const { rows } = await pool.query(
         `
