@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import ProfileMain from "../components/profilePage/ProfileMain";
 
-test("explore", async (done) => {
+test("explore", async () => {
   render(
     <BrowserRouter>
       <ProfileMain />
@@ -14,5 +14,5 @@ test("explore", async (done) => {
 
     expect(screen.getByText("Saved"));
     expect(screen.getByText("Taged"));
-    done()
+    
 });

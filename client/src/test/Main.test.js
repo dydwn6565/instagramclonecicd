@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import PostImageComponent from "../components/PostImageComponent";
 import ExtendedMainModal from "../components/Modals/ExtendedMainModal";
-test("renders learn react link", () => {
+test("main", () => {
 
 const yourMethodMockData = 
   {
@@ -31,7 +31,7 @@ const yourMethodMockData =
 
 });
 
-test("renders learn react link", () => {
+test("extended main modal in main page", () => {
 
   const yourMethodMockData = {
     like: true,

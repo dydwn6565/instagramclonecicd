@@ -6,7 +6,7 @@ import Login from "../components/Login";
 import { BrowserRouter } from "react-router-dom";
 
 import { createMemoryHistory } from "history";
-test("renders learn react link", () => {
+test("login", () => {
     const mockGeolocation = {
       getCurrentPosition: jest.fn().mockImplementationOnce((success) =>
         Promise.resolve(
@@ -30,7 +30,7 @@ test("renders learn react link", () => {
   expect(InstagramTitle).toBeInTheDocument();
 });
 
-test("renders learn react link", async () => {
+test("login with invalid user input", async () => {
   const mockGeolocation = {
     getCurrentPosition: jest.fn().mockImplementationOnce((success) =>
       Promise.resolve(
@@ -59,7 +59,7 @@ test("renders learn react link", async () => {
 });
 
 
-test("renders learn react link", async () => {
+test("login with sign up button ", async () => {
     const history = createMemoryHistory({
       initialEntries: ["/accounts/emailsignup"],
     });
@@ -88,7 +88,7 @@ test("renders learn react link", async () => {
 
 
 
-test("renders learn react link", async () => {
+test("login with valid user input", async () => {
   const history = createMemoryHistory({
     initialEntries: ["/"],
   });

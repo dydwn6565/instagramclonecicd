@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import MyMessage from "../components/MyMessage";
 import { BrowserRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
-test("renders learn react link",async () => {
+test("my message",async () => {
     const obj = {
     id:1,userid:"1234567890",
     username:"Yong",

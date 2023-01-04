@@ -3,10 +3,10 @@ import userEvent from "@testing-library/user-event";
 
 import SignUp from "../components/SignUp";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 import { createMemoryHistory } from "history";
-test("renders learn react link", () => {
+test("renders sign up", () => {
   render(
     <BrowserRouter>
       <SignUp />
@@ -19,41 +19,37 @@ test("renders learn react link", () => {
   expect(checkyourname).toBeInTheDocument();
 });
 
-test("test user invalid input", async () => {
+test("test user sign up with sign up button", async () => {
   render(
     <BrowserRouter>
       <SignUp />
     </BrowserRouter>
   );
-  
+
   await userEvent.type(
     screen.getByPlaceholderText("cellphone number or E-mail address"),
     "50"
   );
 
-  
   await userEvent.click(screen.getByText("Sign up"));
-  
 
-    const checkyourname = screen.getByText("Please type 10 numbers or email");
-    expect(checkyourname).toBeInTheDocument();
-  
+  const checkyourname = screen.getByText("Please type 10 numbers or email");
+  expect(checkyourname).toBeInTheDocument();
 });
 
 
 
-test("test user invalid input", async () => {
-   const history = createMemoryHistory({
-     initialEntries: ["/login"],
-   });
+test("test sign up link to login", async () => {
+  const history = createMemoryHistory({
+    initialEntries: ["/login"],
+  });
   render(
     <BrowserRouter history={history}>
       <SignUp />
     </BrowserRouter>
   );
-   
-await userEvent.click(screen.getByRole("link",{name:"Login"}));
-expect(history.location.pathname).toBe("/login");
 
+  await userEvent.click(screen.getByRole("link", { name: "Login" }));
+  expect(history.location.pathname).toBe("/login");
 });
 
