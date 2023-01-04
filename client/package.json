@@ -39,7 +39,7 @@
         "extends": [
             "react-app",
             "react-app/jest"
-        ]  
+        ]
     },
     "browserslist": {
         "production": [
@@ -56,6 +56,7 @@
     "devDependencies": {
         "@testing-library/user-event": "^14.4.3",
         "eslint": "^8.0.0",
-        "eslint-config-react-app": "^7.0.1"
+        "eslint-config-react-app": "^7.0.1",
+        "jest-location-mock": "^1.0.9"
     }
 }
