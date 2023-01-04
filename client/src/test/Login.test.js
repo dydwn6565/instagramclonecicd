@@ -1,120 +1,118 @@
-// import { render, screen, fireEvent } from "@testing-library/react";
-// import userEvent from "@testing-library/user-event";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
-// import Login from "../components/Login";
+import Login from "../components/Login";
 
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
-// import { createMemoryHistory } from "history";
-// test("renders learn react link", () => {
-//     const mockGeolocation = {
-//       getCurrentPosition: jest.fn().mockImplementationOnce((success) =>
-//         Promise.resolve(
-//           success({
-//             coords: {
-//               latitude: 51.1,
-//               longitude: 45.3,
-//             },
-//           })
-//         )
-//       ),
-//     };
-//     global.navigator.geolocation = mockGeolocation;
-//   render(
-//     <BrowserRouter>
-//       <Login />
-//     </BrowserRouter>
-//   );
+import { createMemoryHistory } from "history";
+test("renders learn react link", () => {
+    const mockGeolocation = {
+      getCurrentPosition: jest.fn().mockImplementationOnce((success) =>
+        Promise.resolve(
+          success({
+            coords: {
+              latitude: 51.1,
+              longitude: 45.3,
+            },
+          })
+        )
+      ),
+    };
+    global.navigator.geolocation = mockGeolocation;
+  render(
+    <BrowserRouter>
+      <Login />
+    </BrowserRouter>
+  );
 
-//   const InstagramTitle = screen.getByText("Instagram");
-//   expect(InstagramTitle).toBeInTheDocument();
-// });
+  const InstagramTitle = screen.getByText("Instagram");
+  expect(InstagramTitle).toBeInTheDocument();
+});
 
-// test("renders learn react link", async () => {
-//   const mockGeolocation = {
-//     getCurrentPosition: jest.fn().mockImplementationOnce((success) =>
-//       Promise.resolve(
-//         success({
-//           coords: {
-//             latitude: 51.1,
-//             longitude: 45.3,
-//           },
-//         })
-//       )
-//     ),
-//   };
-//   global.navigator.geolocation = mockGeolocation;
-//   render(
-//     <BrowserRouter>
-//       <Login />
-//     </BrowserRouter>
-//   );
-//     // await userEvent.type(screen.getByTestId("add-word-input"), "50");
-//     // await userEvent.focus(screen.getByTestId("add-word-input"));
-//     const [checkbox, radio, number] = screen.getAllByTestId("add-word-input");
-//      expect(document.body).toHaveFocus();
-//     userEvent.tab()
-//     await userEvent.click(screen.getByTestId("add-word-button"));
-//   const checkidmessage = screen.getByText("Please check your id");
-//   expect(checkidmessage).toBeInTheDocument();
-// });
+test("renders learn react link", async () => {
+  const mockGeolocation = {
+    getCurrentPosition: jest.fn().mockImplementationOnce((success) =>
+      Promise.resolve(
+        success({
+          coords: {
+            latitude: 51.1,
+            longitude: 45.3,
+          },
+        })
+      )
+    ),
+  };
+  global.navigator.geolocation = mockGeolocation;
+  render(
+    <BrowserRouter>
+      <Login />
+    </BrowserRouter>
+  );
+    
+    const [checkbox, radio, number] = screen.getAllByTestId("add-word-input");
+     expect(document.body).toHaveFocus();
+    userEvent.tab()
+    await userEvent.click(screen.getByTestId("add-word-button"));
+  const checkidmessage = screen.getByText("Please check your id");
+  expect(checkidmessage).toBeInTheDocument();
+});
 
 
-// test("renders learn react link", async () => {
-//     const history = createMemoryHistory({
-//       initialEntries: ["/accounts/emailsignup"],
-//     });
-//   const mockGeolocation = {
-//     getCurrentPosition: jest.fn().mockImplementationOnce((success) =>
-//       Promise.resolve(
-//         success({
-//           coords: {
-//             latitude: 51.1,
-//             longitude: 45.3,
-//           },
-//         })
-//       )
-//     ),
-//   };
-//   global.navigator.geolocation = mockGeolocation;
-//   render(
-//     <BrowserRouter>
-//       <Login />
-//     </BrowserRouter>
-//   );
-//   // await userEvent.type(screen.getByTestId("add-word-input"), "50");
-//   // await userEvent.focus(screen.getByTestId("add-word-input"));
-//   await userEvent.click(screen.getByRole("link", { name: "SignUp" }));
-//   expect(history.location.pathname).toBe("/accounts/emailsignup");
-// });
+test("renders learn react link", async () => {
+    const history = createMemoryHistory({
+      initialEntries: ["/accounts/emailsignup"],
+    });
+  const mockGeolocation = {
+    getCurrentPosition: jest.fn().mockImplementationOnce((success) =>
+      Promise.resolve(
+        success({
+          coords: {
+            latitude: 51.1,
+            longitude: 45.3,
+          },
+        })
+      )
+    ),
+  };
+  global.navigator.geolocation = mockGeolocation;
+  render(
+    <BrowserRouter>
+      <Login />
+    </BrowserRouter>
+  );
+  
+  await userEvent.click(screen.getByRole("link", { name: "SignUp" }));
+  expect(history.location.pathname).toBe("/accounts/emailsignup");
+});
 
 
 
-// test("renders learn react link", async () => {
-//   const history = createMemoryHistory({
-//     initialEntries: ["/"],
-//   });
-//   const mockGeolocation = {
-//     getCurrentPosition: jest.fn().mockImplementationOnce((success) =>
-//       Promise.resolve(
-//         success({
-//           coords: {
-//             latitude: 51.1,
-//             longitude: 45.3,
-//           },
-//         })
-//       )
-//     ),
-//   };
-//   global.navigator.geolocation = mockGeolocation;
-//   render(
-//     <BrowserRouter>
-//       <Login />
-//     </BrowserRouter>
-//   );
-//   await userEvent.type(screen.getByTestId("add-word-input"), "1234567890");
-//   await userEvent.type(screen.getByTestId("add-word-input-two"), "123456");
-//   // await userEvent.focus(screen.getByTestId("add-word-input"));
-//   await userEvent.click(screen.getByRole("button", { name: "Login" }));
-//   expect(history.location.pathname).toBe("/");
-// });
+test("renders learn react link", async () => {
+  const history = createMemoryHistory({
+    initialEntries: ["/"],
+  });
+  const mockGeolocation = {
+    getCurrentPosition: jest.fn().mockImplementationOnce((success) =>
+      Promise.resolve(
+        success({
+          coords: {
+            latitude: 51.1,
+            longitude: 45.3,
+          },
+        })
+      )
+    ),
+  };
+  global.navigator.geolocation = mockGeolocation;
+  render(
+    <BrowserRouter>
+      <Login />
+    </BrowserRouter>
+  );
+  await userEvent.type(screen.getByTestId("add-word-input"), "1234567890");
+  await userEvent.type(screen.getByTestId("add-word-input-two"), "123456");
+  
+  await userEvent.click(screen.getByRole("button", { name: "Login" }));
+  expect(history.location.pathname).toBe("/");
+});
