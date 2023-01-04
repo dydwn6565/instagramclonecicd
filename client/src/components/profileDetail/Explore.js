@@ -10,6 +10,7 @@ function Explore() {
           <img
             alt="pitcure"
             src="https://img.insight.co.kr/static/2022/05/05/700/img_20220505143127_nqoog77t.webp"
+            id="explore-image"
           />
           <img
             alt="pitcure"

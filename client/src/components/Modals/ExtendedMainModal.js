@@ -29,7 +29,7 @@ function ExtendedMainModal({
       setUserInformation(JSON.parse(userInfo));
     }
   }, []);
-  
+
   return (
     <div>
       <div className="extended-main-modal-backdrop" onClick={extendComment} />
@@ -65,7 +65,7 @@ function ExtendedMainModal({
               <div className="extended-main-modal-info-content-container">
                 <div className="extended-main-modal-info-content-comment">
                   {commentList.map((comment, index) => (
-                    <>
+                    
                       <div
                         key={comment + index}
                         className="extended-main-modal-info-content-comment-inside"
@@ -81,7 +81,7 @@ function ExtendedMainModal({
                           <span>{comment.comment}</span>
                         </div>
                       </div>
-                    </>
+                    
                   ))}
                 </div>
               </div>

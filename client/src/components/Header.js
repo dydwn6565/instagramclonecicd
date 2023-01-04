@@ -104,22 +104,25 @@ function Header() {
                 onFocus={(e) => hideSearchedIconHandler(e)}
                 onBlur={(e) => searchUserBlueHanlder()}
               />
-            {searchedUser && (
-              <>
-                {/* <div className="diamond"></div> */}
-                <div className="searched-users-list">
-                  {searchedUser.map((user) => (
-                    <div key={user.userid} className="searched-user-container">
-                      <Avatar />
-                      <div className="searched-users-id-and-username">
-                        <div>{user.userid}</div>
-                        <div>{user.username}</div>
+              {searchedUser && (
+                <>
+                  {/* <div className="diamond"></div> */}
+                  <div className="searched-users-list">
+                    {searchedUser.map((user) => (
+                      <div
+                        key={user.userid}
+                        className="searched-user-container"
+                      >
+                        <Avatar />
+                        <div className="searched-users-id-and-username">
+                          <div>{user.userid}</div>
+                          <div>{user.username}</div>
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
-              </>
-            )}
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           </form>
         </div>
@@ -137,15 +140,19 @@ function Header() {
             <ExploreOutlinedIcon className="explore" />
           </Link>
           <div className="favorite-icon">
-            <FavoriteBorderOutlinedIcon onClick={postActivity} />
+            <FavoriteBorderOutlinedIcon
+              onClick={postActivity}
+              data-testid="header-favorite-icon"
+            />
             {openHeart && <LikeActivity postActivity={postActivity} />}
           </div>
 
           <div>
             <Avatar
-            className="head-avatar"
+              className="head-avatar"
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiGcFYBKGruads8sUVAfUBlX8orSdEwuSSTg&usqp=CAU"
               onClick={headerModalHandler}
+              data-testid="header-avatar"
             />
 
             {openHeaderModal && (
@@ -155,15 +162,14 @@ function Header() {
             )}
           </div>
         </div>
-
       </div>
-        {openModal && (
-          <MessageModal
-            title="Create New Post"
-            message="Please Select your pitcure or videos "
-            onConfirm={createNewPost}
-          />
-        )}
+      {openModal && (
+        <MessageModal
+          title="Create New Post"
+          message="Please Select your pitcure or videos "
+          onConfirm={createNewPost}
+        />
+      )}
     </>
   );
 }

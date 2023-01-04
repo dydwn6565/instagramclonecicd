@@ -18,6 +18,7 @@ function PostImageComponent({ images, content,userid, id, postid }) {
   const [postUser,setPostUser]= useState();
   const [like, setLike] = useState(true);
   const [commentUpdated,setCommentUpdated] = useState("");
+  
   useEffect(() => {
     const getPostComment = async () => {
       

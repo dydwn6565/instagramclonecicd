@@ -151,6 +151,9 @@ const createUser=async ()=>{
           onChange={enteredUserNameChangeHandler}
           onBlur={enteredUserNameBlurHandler}
           value={enteredUserName}
+          id="test-email-in-sign-up"
+          name="test-email-in-sign-up"
+          role="text-user-input"
         />
         {enteredUserNameHasError ? (
           <>
@@ -184,7 +187,11 @@ const createUser=async ()=>{
         </div>
 
         {formIsValid ? (
-          <button className="sign-up-bt" onClick={formSubmissionHandler}>
+          <button
+            name="sign-up-test-bt"
+            className="sign-up-bt"
+            onClick={formSubmissionHandler}
+          >
             Sign up
           </button>
         ) : (
@@ -192,8 +199,7 @@ const createUser=async ()=>{
         )}
       </div>
       <div className="sign-up-login">
-        Do you have an account?{" "}
-          <Link to="/login">Login</Link>
+        Do you have an account? <Link to="/login">Login</Link>
       </div>
       <div className="sign-up-please-download-title">Please download app</div>
       <div className="login-images">

@@ -1,0 +1,71 @@
+// import { render, screen, fireEvent } from "@testing-library/react";
+// import userEvent from "@testing-library/user-event";
+// import App from "../App";
+// import Login from "../components/Login";
+// import SignUp from "../components/SignUp";
+// import StoriesActivity from "../components/StoriesActivity";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import store from "../store/index";
+// import { Provider } from "react-redux";
+// import { createMemoryHistory } from "history";
+// test("renders learn react link", () => {
+//   render(
+//     <BrowserRouter>
+//       <SignUp />
+//     </BrowserRouter>
+//   );
+
+//   const checkyourname = screen.getByText(
+//     "Please sign up if you want to see your friends pitcure and videos"
+//   );
+//   expect(checkyourname).toBeInTheDocument();
+// });
+
+// test("test user invalid input", async () => {
+//   render(
+//     <BrowserRouter>
+//       <SignUp />
+//     </BrowserRouter>
+//   );
+//   // const buttonElement = dom.findAllByTestIdquerySelectorAll("test-email-in-sign-up");
+//   // buttonElement.value = 5;
+  
+//   // screen.getByPlaceholderText("user name")
+  
+//   // document.getElementById("test-email-in-sign-up").value = "test";
+//   // const userInput = screen.getByRole("text-user-input");
+//   //   console.log(userInput)
+//   // expect(screen.getByRole("button", { name: /Sign up/i })).toBeEnabled;
+//   // userEvent.type(screen.getByPlaceholderText(/name/i), "50");
+//   await userEvent.type(
+//     screen.getByPlaceholderText("cellphone number or E-mail address"),
+//     "50"
+//   );
+
+//   // fireEvent.change(screen.getByPlaceholderText("user name"), { target: { value: "test" } });
+//   await userEvent.click(screen.getByText("Sign up"));
+  
+
+//     const checkyourname = screen.getByText("Please type 10 numbers or email");
+//     expect(checkyourname).toBeInTheDocument();
+  
+// });
+
+
+
+// test("test user invalid input", async () => {
+//    const history = createMemoryHistory({
+//      initialEntries: ["/login"],
+//    });
+//   render(
+//     <BrowserRouter history={history}>
+//       <SignUp />
+//     </BrowserRouter>
+//   );
+   
+// await userEvent.click(screen.getByRole("link",{name:"Login"}));
+// expect(history.location.pathname).toBe("/login");
+// // const loginpage = screen.getByText("SignUp");
+// // expect(loginpage).toBeInTheDocument();
+// });
+

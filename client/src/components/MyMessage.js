@@ -50,7 +50,7 @@ function MyMessage({ setBlurBackground }) {
     
     const user = JSON.parse(localStorage.getItem("userInfo"))
     setUserInfo(user)
-    console.log(user);
+    
     try {
       const chatRoomList = async () => {
         const roomListData = await fetch(
@@ -110,7 +110,6 @@ function MyMessage({ setBlurBackground }) {
               {filteredRoomList &&
                 filteredRoomList.map((chatRoom) => (
                   <>
-                    
                     <div key={chatRoom.id} className="my-message-message">
                       <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRqRyIiwYCq4s-fZi1zdmyfSuIPUvg9EyZ_Q&usqp=CAU" />
                       <div>
@@ -118,16 +117,17 @@ function MyMessage({ setBlurBackground }) {
                           style={{ textDecoration: "none" }}
                           state={{
                             randomRoomNumber: chatRoom[0].roomnumber,
-                            chatRoom :chatRoom,
+                            chatRoom: chatRoom,
                             newChat: false,
                           }}
                           to={`/myMessage/${chatRoom[0].roomnumber}`}
                         >
                           <div className="my-message-username">
-                            {chatRoom.map(chat =>(
+                            {chatRoom.map((chat) => (
                               <>
-                              {chat.name !== userInfo.name &&<span>{chat.name  } </span>}
-                                
+                                {chat.name !== userInfo.name && (
+                                  <span>{chat.name} </span>
+                                )}
                               </>
                             ))}
                           </div>
@@ -150,6 +150,7 @@ function MyMessage({ setBlurBackground }) {
                 Send your private picture or message to your friend or group
               </div>
               <button
+                data-testid="message-modal-event"
                 className="my-message-my-message-btn"
                 onClick={messageModalHandler}
               >

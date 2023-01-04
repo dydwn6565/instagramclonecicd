@@ -132,82 +132,80 @@ function Login() {
   return (
     <>
       <div className="login-outside-container">
-
-            <LoginImage />
-            <div className="login-container">
-              <div className="login">
-                <div className="login-title">Instagram</div>
-                <form onSubmit={formSubmissionHandler} className="login-form">
-                  <input
-                    type="text"
-                    onChange={userIdChangedHandler}
-                    onBlur={userIdBlurHandler}
-                    value={enteredUserId}
-                  />
-                  {userIdInputHasError && (
-                    <p className="error-text">Please check your id</p>
-                  )}
-                  <input
-                    type={passwordShown ? "password" : "text"}
-                    onChange={passwordChangeHandler}
-                    onBlur={passwordBlurHandler}
-                    value={enteredPassword}
-                  />
-                  <div className="login-show-password">
-                    <strong
-                      onClick={() =>
-                        setPasswordShown((prevState) => !prevState)
-                      }
-                    >
-                      {" "}
-                      show password
-                    </strong>
-                  </div>
-                  {passwordInputHasError && (
-                    <p className="error-text">Please check your password</p>
-                  )}
-                  <button className="login-button">Login</button>
-                </form>
-                <p className="hr-row">
+        <LoginImage />
+        <div className="login-container">
+          <div className="login">
+            <div className="login-title">Instagram</div>
+            <form onSubmit={formSubmissionHandler} className="login-form">
+              <input
+                type="text"
+                onChange={userIdChangedHandler}
+                onBlur={userIdBlurHandler}
+                value={enteredUserId}
+                data-testid="add-word-input"
+              />
+              {userIdInputHasError && (
+                <p className="error-text">Please check your id</p>
+              )}
+              <input
+                type={passwordShown ? "password" : "text"}
+                onChange={passwordChangeHandler}
+                onBlur={passwordBlurHandler}
+                value={enteredPassword}
+                data-testid="add-word-input-two"
+              />
+              <div className="login-show-password">
+                <strong
+                  onClick={() => setPasswordShown((prevState) => !prevState)}
+                >
                   {" "}
-                  ----------------------or---------------------
-                </p>
+                  show password
+                </strong>
+              </div>
+              {passwordInputHasError && (
+                <p className="error-text">Please check your password</p>
+              )}
+              <button className="login-button" data-testid="add-word-button">
+                Login
+              </button>
+            </form>
+            <p className="hr-row">
+              {" "}
+              ----------------------or---------------------
+            </p>
 
-                <div className="login-with-facebook">Login with Facebook</div>
-                <div className="forget-login">
-                  <Link to="/accounts/password/reset">
-                    {" "}
-                    Did you forget your password
-                  </Link>
-                </div>
-              </div>
-
-              <div className="login-no-account">
-                Don't you have account ?
-                <Link to="/accounts/emailsignup">SignUp</Link>
-              </div>
-
-              <div className="login-download-app">
-                Please download application
-              </div>
-              <div className="login-images">
-                <img
-                  className="app-store-button"
-                  src="https://i.stack.imgur.com/xHgSL.png"
-                  alt=""
-                />
-                <img
-                  className="google-store-button"
-                  src="https://texttofloss.com/wp-content/uploads/2021/01/Google-Play-Store-Button.png"
-                  alt=""
-                />
-              </div>
+            <div className="login-with-facebook">Login with Facebook</div>
+            <div className="forget-login">
+              <Link to="/accounts/password/reset">
+                {" "}
+                Did you forget your password
+              </Link>
             </div>
-            <Link ref={linkToMain} to="/" hidden>
-              s
-            </Link>
+          </div>
+
+          <div className="login-no-account">
+            Don't you have account ?
+            <Link to="/accounts/emailsignup">SignUp</Link>
+          </div>
+
+          <div className="login-download-app">Please download application</div>
+          <div className="login-images">
+            <img
+              className="app-store-button"
+              src="https://i.stack.imgur.com/xHgSL.png"
+              alt=""
+            />
+            <img
+              className="google-store-button"
+              src="https://texttofloss.com/wp-content/uploads/2021/01/Google-Play-Store-Button.png"
+              alt=""
+            />
+          </div>
         </div>
-          
+        <Link ref={linkToMain} to="/" hidden>
+          s
+        </Link>
+      </div>
     </>
   );
 }

@@ -54,7 +54,7 @@
 
 .my-message-search-container {
     width: 30vw;
-    height: 45vh;
+    /* height: 45vh; */
     margin-top: -1vh;
     overflow: auto;
 }
@@ -79,8 +79,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 5.5vw;
-    height: 3.5vh;
+    
     font-size: 17px;
     padding: 5px;
     color: #10d0ff;
