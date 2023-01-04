@@ -5,9 +5,10 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
     paths:
     -  /home/runner/work/instagramclonecicd/instagramclonecicd/server  
+    branches: [ "main" ]
+    
   pull_request:
     branches: [ "main" ]
  
