@@ -270,10 +270,10 @@ test("renders sign up", () => {
     </BrowserRouter>
   );
 
-  const checkyourname = screen.getByText(
+  const userid = screen.getByText(
     "Please sign up if you want to see your friends pitcure and videos"
   );
-  expect(checkyourname).toBeInTheDocument();
+  expect(userid).toBeInTheDocument();
 });
 
 test("test user sign up with sign up button", async () => {
@@ -290,8 +290,8 @@ test("test user sign up with sign up button", async () => {
 
   await userEvent.click(screen.getByText("Sign up"));
 
-  const checkyourname = screen.getByText("Please type 10 numbers or email");
-  expect(checkyourname).toBeInTheDocument();
+  const id = screen.getByText("Please type 10 numbers or email");
+  expect(id).toBeInTheDocument();
 });
 
 test("test sign up link to login", async () => {
