@@ -1,15 +1,15 @@
-import Explore from "../components/profileDetail/Explore";
-import Header from "../components/Header";
+import Explore from "./components/profileDetail/Explore";
+import Header from "./components/Header";
 import { render,screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
-import Login from "../components/Login";
+import Login from "./components/Login";
 import { createMemoryHistory } from "history";
-import PostImageComponent from "../components/PostImageComponent";
-import ExtendedMainModal from "../components/Modals/ExtendedMainModal";
-import MyMessage from "../components/MyMessage";
-import ProfileMain from "../components/profilePage/ProfileMain";
-import SignUp from "../components/SignUp";
+import PostImageComponent from "./components/PostImageComponent";
+import ExtendedMainModal from "./components/Modals/ExtendedMainModal";
+import MyMessage from "./components/MyMessage";
+import ProfileMain from "./components/profilePage/ProfileMain";
+import SignUp from "./components/SignUp";
 describe("explore", ()=>{
   test("explore", async () => {
     render(
