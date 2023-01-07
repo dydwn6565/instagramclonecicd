@@ -38,7 +38,19 @@ jobs:
     # - run: npm run build --if-present
       
     - run: npm test
-      
+
+
+name: Node.js CI
+
+on:
+  push:
+    
+    branches: [ "main" ]
+    
+  pull_request:
+    branches: [ "main" ]
+ 
+
 jobs:
   build:
 
