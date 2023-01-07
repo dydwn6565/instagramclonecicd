@@ -15,11 +15,12 @@ describe("chat addUser and getUser ", function () {
   step("chat addUser and getUser ", function (done) {
     pool
       .connect({
-        host: "localhost",
-        port: 5432,
-        database: "postgres",
+        // postgresql://postgres:iys244NwxACqWdAzXXTd@containers-us-west-146.railway.app:5628/railway
+        host: "containers-us-west-146.railway.app",
+        port: 5628,
+        database: "railway",
         user: "postgres",
-        password: "dydwn6565",
+        password: "iys244NwxACqWdAzXXTd",
       })
 
       .then(async () => {
@@ -86,16 +87,12 @@ describe("chat addUser and getUser ", function () {
             chatMessages.userid,
             chatMessages.text
           );
-          const getuserResult = await getUsersInRoom(
-            
-            chatData.id
-          );
+          const getuserResult = await getUsersInRoom(chatData.id);
 
           const findmessageResult = await findMessages(
-            
             chatData.randomRoomNumber
           );
-          
+
           expect(findmessageResult[0].text).to.equal("testText");
           expect(findmessageResult[0].roomnumber).to.equal("5512");
           expect(findmessageResult[0].userid).to.equal("dydwn6565");
@@ -104,7 +101,7 @@ describe("chat addUser and getUser ", function () {
           await pool.query("truncate chatmessages cascade");
 
           // await pool.query("truncate users cascade");
-          done()
+          done();
         } catch (error) {
           console.log(error);
         }
